@@ -38,7 +38,7 @@ conda activate ipyrad
 conda desactivate
 ```
 
-### Where to store the data
+## Where to store the data
 
 Large datafiles should be placed in the data disk. For the Joly lab, it should go in this folder: ```/data/joly_data```
 
