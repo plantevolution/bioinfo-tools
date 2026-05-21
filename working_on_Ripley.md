@@ -38,6 +38,11 @@ conda activate ipyrad
 conda desactivate
 ```
 
+### Where to store the data
+
+Large datafiles should be placed in the data disk. For the Joly lab, it should go in this folder: ```/data/joly_data```
+
+
 ## Some useful info for working effectively
 
 ### Usage of the computer
@@ -103,11 +108,6 @@ screen -d -r 10835
 ```
 
 More information on scree, you can look at [the documentation here](https://linuxize.com/post/how-to-use-linux-screen/).
-
-
-### Where to store the data
-
-Large datafiles should be placed in the data disk. For the Joly lab, it should go in this folder: ```/data/joly_data```
 
 
 ## Create users (admin only)
