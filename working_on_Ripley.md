@@ -1,10 +1,8 @@
-# Ripley
+# Working on Ripley
 
 Here is a tutorial to work on the Ripley server at the Institut de recherche en biologie végétale (IRBV).
 
-## Working on Ripley 
-
-### How to connect to Ripley
+## How to connect to Ripley
 
 To connect on Ripley, open a terminal window and enter the followong command:
 
@@ -20,12 +18,12 @@ $ which bash
 $ chsh -s /usr/bin/bash
 ```
 
-### Transfering files
+## Transfering files
 
 I strongly suggest that you install a file transfer software to transfer your files to the cluster. One useful software that is cross-platform is FileZilla. You have to use port 22 to transfer files.
 
 
-### Working with conda
+## Working with conda
 
 When working on Ripley, it is important to work in a virtual environment. This allows to install softwares in this environement and makes sure that you will not be affecting other users.
 
@@ -125,5 +123,3 @@ sudo useradd -m khader
 ```sh
 sudo passwd khader
 ```
-
-
