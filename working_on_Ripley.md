@@ -110,6 +110,14 @@ screen -d -r 10835
 More information on scree, you can look at [the documentation here](https://linuxize.com/post/how-to-use-linux-screen/).
 
 
+## Check disk usage
+
+You can use this command to see the disk usage of all subfolders in a directory:
+
+```sh
+du -h --max-depth=1 | sort -h
+```
+
 ## Create users (admin only)
 
 ### create user and home directory
