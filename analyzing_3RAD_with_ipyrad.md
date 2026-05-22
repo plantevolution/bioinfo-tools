@@ -36,8 +36,8 @@ This step is optional and could only be done if a random nucleotide tag has been
 If you have multiple sequence files, the first step here is to combine different sequence files of the same library in a single file. This is important because the software will use the information of one file to exclude PCR duplicates. You have to do this for reads 1 and 2 separately, combining the sequence files in the same order in both cases.
 
 ```sh
-cat ./spike/p01/impatiens1_iTRU7_101_01_S1_L001_R1_001.fastq.gz ./run1/impatiens1_iTRU7_101_01_R1.fastq.gz > ./allruns/p01/plate01_R1_spikeandrun1.fastq.gz
-cat ./spike/p01/impatiens1_iTRU7_101_01_S1_L001_R2_001.fastq.gz ./run1/impatiens1_iTRU7_101_01_R2.fastq.gz > ./allruns/p01/plate01_R2_spikeandrun1.fastq.gz
+cat ./seqs/rawseqs/spike/p01/impatiens1_iTRU7_101_01_S1_L001_R1_001.fastq.gz ./seqs/rawseqs/run1/p01/impatiens1_iTRU7_101_01_R1.fastq.gz > ./seqs/rawseqs/allruns/p01/plate01_R1_spikeandrun1.fastq.gz
+cat ./seqs/rawseqs/spike/p01/impatiens1_iTRU7_101_01_S1_L001_R2_001.fastq.gz ./seqs/rawseqs/run1/p01/impatiens1_iTRU7_101_01_R2.fastq.gz > ./seqs/rawseqs/allruns/p01/plate01_R2_spikeandrun1.fastq.gz
 ```
 
 
@@ -46,10 +46,10 @@ cat ./spike/p01/impatiens1_iTRU7_101_01_S1_L001_R2_001.fastq.gz ./run1/impatiens
 To remove PCR duplicates, we use a program called [dedup](https://github.com/simjoly/dedup). All the info on how to compile and use the program are in the github repository.
 
 ```sh
-./dedup --read1 ./allruns/p01/plate01_R1_spikeandrun1.fastq.gz --read2 ./allruns/p01/plate01_R2_spikeandrun1.fastq.gz --barcode-in-name --use-bloom
-mkdir ./allruns/p01/nodups/
-cp nodup_plate01_R1_spikeandrun1.fastq.gz ./allruns/p01/nodups/
-cp nodup_plate01_R2_spikeandrun1.fastq.gz ./allruns/p01/nodups/
+./dedup --read1 ./seqs/rawseqs/allruns/p01/plate01_R1_spikeandrun1.fastq.gz --read2 ./seqs/rawseqs/allruns/p01/plate01_R2_spikeandrun1.fastq.gz --barcode-in-name --use-bloom
+mkdir ./seqs/rawseqs/allruns/p01/nodups/
+cp nodup_plate01_R1_spikeandrun1.fastq.gz ./seqs/rawseqs/allruns/p01/nodups/
+cp nodup_plate01_R2_spikeandrun1.fastq.gz ./seqs/rawseqs/allruns/p01/nodups/
 ```
 
 
