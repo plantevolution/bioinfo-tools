@@ -45,13 +45,19 @@ cat ./seqs/rawseqs/spike/p01/impatiens1_iTRU7_101_01_S1_L001_R2_001.fastq.gz ./s
 
 To remove PCR duplicates, we use a program called [dedup](https://github.com/simjoly/dedup). All the info on how to compile and use the program are in the github repository.
 
+dedup can take a while on large files, so it could be a good idea to use `screen`.
+
 ```sh
 ./dedup --read1 ./seqs/rawseqs/allruns/p01/plate01_R1_spikeandrun1.fastq.gz --read2 ./seqs/rawseqs/allruns/p01/plate01_R2_spikeandrun1.fastq.gz --barcode-in-name --use-bloom
-mkdir ./seqs/rawseqs/allruns/p01/nodups/
-cp nodup_plate01_R1_spikeandrun1.fastq.gz ./seqs/rawseqs/allruns/p01/nodups/
-cp nodup_plate01_R2_spikeandrun1.fastq.gz ./seqs/rawseqs/allruns/p01/nodups/
 ```
 
+`dedup` saves the output files in the directory where the command was given. You'll have to move the sequence files without duplicates afterwards.
+
+```sh
+mkdir ./seqs/rawseqs/allruns/p01/nodups/
+mv nodup_plate01_R1_spikeandrun1.fastq.gz ./seqs/rawseqs/allruns/p01/nodups/
+mv nodup_plate01_R2_spikeandrun1.fastq.gz ./seqs/rawseqs/allruns/p01/nodups/
+```
 
 ## ipyrad
 
