@@ -68,6 +68,7 @@ I suggest to run ipyrad on the /data/ disk because it creates a lot of files and
 Create a new analysis for plate 01.
 
 ```bash
+conda activate ipyrad
 ipyrad -n run1-p01
 ```
 
@@ -75,13 +76,13 @@ Edit the parameter file. Here's an example for 3RAD:
 
 ```
 ------- ipyrad params file (v.0.9.95)-------------------------------------------
-spike_p01                                               ## [0] [assembly_name]: Assembly name. Used to name output directories for assembly steps
+run1-p01                                                ## [0] [assembly_name]: Assembly name. Used to name output directories for assembly steps
 /data/joly_data/impatiens/                              ## [1] [project_dir]: Project dir (made in curdir if not present)
-/data/joly_data/impatiens/allruns/p01/nodups/*.fq.gz    ## [2] [raw_fastq_path]: Location of raw non-demultiplexed fastq files
-/data/joly_data/impatiens/barcodes_p01.txt              ## [3] [barcodes_path]: Location of barcodes file
+/data/joly_data/impatiens/seqs/rawseqs/allruns/p01/nodups/*.fastq.gz    ## [2] [raw_fastq_path]: Location of raw non-demultiplexed fastq files
+/data/joly_data/impatiens/barcodes/barcodes_p01.txt              ## [3] [barcodes_path]: Location of barcodes file
                                                         ## [4] [sorted_fastq_path]: Location of demultiplexed/sorted fastq files
 reference                                               ## [5] [assembly_method]: Assembly method (denovo, reference)
-/home/joly_data/impatiens/Impatiens_reference_genome    ## [6] [reference_sequence]: Location of reference sequence file
+/data/joly_data/impatiens/Impatiens_reference_genome/    ## [6] [reference_sequence]: Location of reference sequence file
 pair3rad                                                ## [7] [datatype]: Datatype (see docs): rad, gbs, ddrad, etc.
 CTAGC,CTAGA,AATTC                                       ## [8] [restriction_overhang]: Restriction overhang (cut1,) or (cut1, cut2)
 5                                                       ## [9] [max_low_qual_bases]: Max low quality base calls (Q<20) in a read
@@ -112,7 +113,7 @@ I notice that the reference genome needs to be in the 'home' folder for the anal
 Once the parameter file is edited, you can run the step 1.
 
 ```bash
-ipyrad -p params-run1-p01.txt -c 12 -s 1
+ipyrad -p params-run1-p01.txt -c 24 -s 1
 ```
 
 You can repeat this step for all the plates you have, creating a new ipyrad project each time.
