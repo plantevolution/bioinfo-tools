@@ -131,3 +131,17 @@ sudo useradd -m khader
 ```sh
 sudo passwd khader
 ```
+
+### Add user to a group of user
+
+```sh
+sudo usermod -a -G jolylab khader
+```
+
+
+
+## Change owner of a folder to a group of user (jolylab)
+
+```bash
+sudo chown -R joly:jolylab ./impatiens/
+```
