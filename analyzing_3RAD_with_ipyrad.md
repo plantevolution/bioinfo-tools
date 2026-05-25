@@ -116,6 +116,13 @@ Once the parameter file is edited, you can run the step 1, which will demultiple
 ipyrad -p params-run1-p01.txt -c 24 -s 1
 ```
 
+To see the results after step 1.
+
+```bash
+#output results
+COLUMNS=9999 ipyrad -p params-run1-p01.txt -r > results-run1-p01.txt
+```
+
 You can repeat this step for all the plates you have, creating a new ipyrad project each time.
 
 Once you have run step 1 for all plates, you can merge all projects into one.
@@ -127,7 +134,7 @@ ipyrad -m run1-allplates params-run1-p01.txt params-run1-p02.txt params-run1-p03
 
 ```bash
 ## print merged stats of new Assembly
-ipyrad -p params-run1-allplates.txt -r
+COLUMNS=9999 ipyrad -p params-run1-allplates.txt -r > results-run1-allplates.txt
 ```
 
 ```bash
@@ -137,7 +144,7 @@ ipyrad -p params-run1-allplates.txt -c 24 -s 234567
 
 ```bash
 #output results
-COLUMNS=9999 ipyrad -p params-run1-allplates.txt -r > results.txt
+COLUMNS=9999 ipyrad -p params-run1-allplates.txt -r > results-run1-allplates.txt
 ```
 
 
