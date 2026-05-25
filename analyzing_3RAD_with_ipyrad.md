@@ -110,7 +110,7 @@ p, s, l, u, v                                           ## [27] [output_formats]
 
 I notice that the reference genome needs to be in the 'home' folder for the analyses, otherwise ipyrad crashes. 
 
-Once the parameter file is edited, you can run the step 1.
+Once the parameter file is edited, you can run the step 1, which will demultiplex the sequences according to the internal barcodes. This has to be done for each plate individually as each plate has the same internal barcodes. Sequences will be grouped by samples and a different file will be created.
 
 ```bash
 ipyrad -p params-run1-p01.txt -c 24 -s 1
@@ -118,7 +118,7 @@ ipyrad -p params-run1-p01.txt -c 24 -s 1
 
 You can repeat this step for all the plates you have, creating a new ipyrad project each time.
 
-Once you have run the steps 1 and 2 for all plates, you can merge all projects into one.
+Once you have run step 1 for all plates, you can merge all projects into one.
 
 ```bash
 ## merge the two lanes into one Assembly named both
